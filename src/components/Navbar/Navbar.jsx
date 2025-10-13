@@ -11,8 +11,8 @@ const Navbar = () => {
     </a>
   </div>
   <div className="flex items-center gap-2 ">
-   <span>6000000000</span>
-   <span>Coin</span>
+   <span className='font-semibold'>6000000000</span>
+   <span className='font-semibold'>Coin</span>
    <img className='h-[20px] w-[20px]' src={dollarImg} alt="" />
   </div>
 </div>
