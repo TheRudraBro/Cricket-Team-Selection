@@ -24,7 +24,9 @@ function App() {
 <Navbar availableBalance={availableBalance}></Navbar>
 
 <div className='max-w-[1200px] mx-auto flex justify-between items-center p-4 mt-4'>
-<h1 className='font-bold text-xl'>Available Players</h1>
+<h1 className='font-bold text-xl'>{
+  toggle === true ? 'Available Players' : 'Selected Players'
+}</h1>
 <div className='font-semibold'>
   <button onClick={() => setToggle(true)} className={`py-3 px-4 border-1 border-gray-400 rounded-l-xl border-r-0 ${toggle ? 'bg-[#E7FE29]' : ''}`}>Available</button>
   <button onClick={() => setToggle(false)} className={`py-3 px-4 border-1 border-gray-400 rounded-r-xl border-l-0 ${!toggle ? 'bg-[#E7FE29]' : ''}`}>Selected <span>(0)</span></button>
