@@ -1,14 +1,14 @@
 import React, { use } from 'react';
+import PlayerCard from '../PlayerCard/PlayerCard';
 
-
-const AvailablePlayers = ({playersPromise}) => {
+const AvailablePlayers = ({playersPromise, setAvailableBalance, availableBalance}) => {
     const playersData = use(playersPromise);
     console.log(playersData);
     return (
         <div className='max-w-[1200px] mx-auto grid grid-cols-1  md:grid-cols-3 gap-20 my-10'>
 
             {
-                playersData.map(player=> <PlayerCard player={player}></PlayerCard> )
+                playersData.map(player=> <PlayerCard availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} player={player}></PlayerCard> )
             }
 
 {/* <div className="card bg-base-100 w-96 shadow-sm p-4">
