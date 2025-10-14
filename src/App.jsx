@@ -1,5 +1,4 @@
 
-
 import './App.css'
 import Navbar from './components/Navbar/Navbar';
 import AvailablePlayers from './components/AvailablePlayers/availablePlayers';
@@ -16,6 +15,7 @@ const playersPromise = fetchPlayers();
 function App() {
   const [toggle, setToggle] = useState(true)
   const [availableBalance, setAvailableBalance] = useState(606660)
+  const [purchasedPlayers, setPurchasedPlayers] = useState([])
 
 
 
@@ -35,12 +35,12 @@ function App() {
 {
   toggle === true?<Suspense fallback={<span className="loading loading-infinity loading-xl"></span>}>
 
-<AvailablePlayers availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} playersPromise={playersPromise}>
+<AvailablePlayers purchasedPlayers={purchasedPlayers} setPurchasedPlayers={setPurchasedPlayers} availableBalance={availableBalance} setAvailableBalance={setAvailableBalance} playersPromise={playersPromise}>
 
 
 </AvailablePlayers>
 
-</Suspense>:<SelectedPlayers></SelectedPlayers>
+</Suspense>:<SelectedPlayers purchasedPlayers={purchasedPlayers}></SelectedPlayers>
 }
 
 
