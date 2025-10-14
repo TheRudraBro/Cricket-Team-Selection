@@ -14,12 +14,13 @@ const playersPromise = fetchPlayers();
 
 function App() {
   const [toggle, setToggle] = useState(true)
-  const [availableBalance, setAvailableBalance] = useState(60622660)
+  const [availableBalance, setAvailableBalance] = useState(6000000)
   const [purchasedPlayers, setPurchasedPlayers] = useState([])
 
   const removePlayer = (p) =>{
     const filteredData = purchasedPlayers.filter(ply=> ply.player_name !== p.player_name);
     setPurchasedPlayers(filteredData);
+    setAvailableBalance(availableBalance + parseInt( p.price.split("USD").join("").split(",").join("")));
   }
 
 
