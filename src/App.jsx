@@ -5,6 +5,8 @@ import Navbar from './components/Navbar/Navbar';
 import AvailablePlayers from './components/AvailablePlayers/availablePlayers';
 import { Suspense, useState } from 'react';
 import SelectedPlayers from './components/SelectedPlayers/SelectedPlayers';
+import bannerImg from './assets/banner-main.png'
+import bannerShadow from './assets/bg-shadow.png'
 
 const fetchPlayers = async () => {
   const res = await fetch('/players.json');
@@ -29,6 +31,20 @@ function App() {
   return (
     <>
 <Navbar availableBalance={availableBalance}></Navbar>
+
+<header  className='max-w-[1200px] mx-auto bg-black rounded-xl p-20 text-center gap-10 md:gap-0 mt-10' style={{ backgroundImage: `url(${bannerShadow})` }}>
+  <img className='h-[100px] w-[100px] mx-auto mb-4' src={bannerImg} alt="" />
+<h2 className='font-bold text-white text-xl'>Assemble Your Ultimate Dream 11 Cricket Team</h2>
+<p className='text-white mt-4'>Beyond Boundaries Beyond Limits</p>
+<button className='rounded-lg font-semibold bg-[#E7FE29] p-2 mt-4'>Claim Free Credit</button>
+
+
+
+</header>
+
+
+
+
 
 <div className='max-w-[1200px] mx-auto flex justify-between items-center p-4 mt-4'>
 <h1 className='font-bold text-xl'>{
