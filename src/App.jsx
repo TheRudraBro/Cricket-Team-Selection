@@ -7,6 +7,7 @@ import { Suspense, useState } from 'react';
 import SelectedPlayers from './components/SelectedPlayers/SelectedPlayers';
 import bannerImg from './assets/banner-main.png'
 import bannerShadow from './assets/bg-shadow.png'
+import logoFooter from './assets/logo-footer.png'
 
 const fetchPlayers = async () => {
   const res = await fetch('/players.json');
@@ -124,6 +125,10 @@ function App() {
 
 <footer className='bg-gray-800 '>
 
+  <div className='max-w-[1200px] mx-auto flex justify-center p-10'>
+    <img src={logoFooter} alt="Logo" />
+  </div>
+
 <div className='text-white text-center p-4 mt-10 flex justify-between items-center max-w-[1200px] mx-auto flex-col md:flex-row gap-10 md:gap-0'>
   <div className="about">
   <h2 className="text-2xl font-bold mb-2">About Us</h2>
@@ -154,9 +159,10 @@ function App() {
 
 
 
-<div className='bg-gray-800 text-white text-center p-4 mt-10'>
-    <p>&copy; 2024 Cricket Team Selector. All rights reserved.</p>
+<div className='text-white text-center p-4 mt-10'>
+    <p>&copy;{" "} <a href="https://github.com/TheRudraBro" target="_blank" rel="noopener noreferrer" className="text-white">Rudra Mojumder</a>{" "} || All rights reserved.</p>
 </div>
+
 
 
 
